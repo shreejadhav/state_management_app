@@ -5,6 +5,7 @@ import 'package:state_management_app/bloc/timer/Ticker.dart';
 import 'package:state_management_app/bloc/timer/bloc_scaffold.dart';
 import 'package:state_management_app/bloc/timer/timer_bloc.dart';
 import 'package:state_management_app/provider/provider_scaffold.dart';
+import 'package:state_management_app/provider/stream_provider_scaffold.dart';
 
 void main() {
   runApp(MyApp());
@@ -121,6 +122,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: Text('Providers'),
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(builder:(_)=>ProviderScaffold()));
+                },
+              ),
+              RaisedButton(k
+                child: Text('Stream Providers'),
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(builder:(_)=>StreamProviderScaffold()));
                 },
               )
             ],
