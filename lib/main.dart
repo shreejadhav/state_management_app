@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:state_management_app/bloc/timer/Ticker.dart';
 import 'package:state_management_app/bloc/timer/bloc_scaffold.dart';
 import 'package:state_management_app/bloc/timer/timer_bloc.dart';
+import 'package:state_management_app/inheritedwidget/InheritedScaffold.dart';
 import 'package:state_management_app/provider/provider_scaffold.dart';
 import 'package:state_management_app/provider/stream_provider_scaffold.dart';
 
@@ -107,6 +108,15 @@ class _MyHomePageState extends State<MyHomePage> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               RaisedButton(
+                child: Text('Inherited widget'),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => InheritedScaffold()));
+                },
+              ),
+              RaisedButton(
                 child: Text("Bloc"),
                 onPressed: () {
                   Navigator.push(
@@ -114,14 +124,15 @@ class _MyHomePageState extends State<MyHomePage> {
                       MaterialPageRoute(
                           builder: (context) => BlocProvider(
                                 create: (context) => TimerBloc(Ticker()),
-                                child:  BlocScaffold(),
+                                child: BlocScaffold(),
                               )));
                 },
               ),
               RaisedButton(
                 child: Text('Providers'),
                 onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(builder:(_)=>ProviderScaffold()));
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (_) => ProviderScaffold()));
                 },
               ),
               RaisedButton(
