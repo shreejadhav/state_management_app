@@ -124,7 +124,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   Navigator.of(context).push(MaterialPageRoute(builder:(_)=>ProviderScaffold()));
                 },
               ),
-              RaisedButton(k
+              RaisedButton(
                 child: Text('Stream Providers'),
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(builder:(_)=>StreamProviderScaffold()));
